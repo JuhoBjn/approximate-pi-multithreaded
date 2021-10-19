@@ -18,6 +18,6 @@ void *create_points(void *thread_points) {
             ((Points *)thread_points)->points_inside_circle++;
         ((Points *)thread_points)->total_created++;
     }
-    cout << "Exiting thread " << ((Points *)thread_points)->tid << endl;
+    cout << "Exiting thread " << ((Points *)thread_points)->tid + 1 << endl;
     pthread_exit(NULL);
 }

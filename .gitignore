@@ -1,2 +1,6 @@
-.vscode
+# Ignore object files and created binary.
 approximate_pi
+*.o
+
+# Also this
+.vscode
