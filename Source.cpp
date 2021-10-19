@@ -27,6 +27,7 @@ int main(int argc, char *argv[]) {
 		}
 	}
 
+	// Wait for all threads to finish.
 	for(pthread_t t: threads) {
 		void **retval = NULL;
 		pthread_join(t, retval);
@@ -41,7 +42,7 @@ int main(int argc, char *argv[]) {
 	}
 
 	// Approximate pi using generated points.
-	double pi = 4 * (double)total_inside_circle / (double)total_points;
+	double pi = 4.0 * (double)total_inside_circle / (double)total_points;
 	cout << "Approximation of pi: " << pi << endl;
 
 	return 0;
