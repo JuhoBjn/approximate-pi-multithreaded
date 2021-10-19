@@ -1,5 +1,4 @@
 #pragma once
-#include <vector>
 using namespace std;
 
 // Create specified amount of points and return points.
