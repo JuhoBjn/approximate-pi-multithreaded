@@ -58,7 +58,7 @@ int main(int argc, char *argv[]) {
 void spread_load(const int &points, vector<int> &points_per_thread) {
 	double num = (double)points / (double)NUMBER_OF_THREADS;
 	if(num == static_cast<int>(num)) {
-		for(int i = 0; i < points_per_thread.size(); ++i)
+		for(int i = 0; i < (int)points_per_thread.size(); ++i)
 			points_per_thread[i] = static_cast<int>(num);
 	}
 	else {
@@ -67,7 +67,7 @@ void spread_load(const int &points, vector<int> &points_per_thread) {
 		double decpart = num - (double)intpart;
 		decpart *= NUMBER_OF_THREADS;
 		int add_to_thread_one = floor(decpart);
-		for(int i = 0; i < points_per_thread.size(); ++i) {
+		for(int i = 0; i < (int)points_per_thread.size(); ++i) {
 			points_per_thread[i] = intpart;
 		}
 		points_per_thread[0] += add_to_thread_one;
