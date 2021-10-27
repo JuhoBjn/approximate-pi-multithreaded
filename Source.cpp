@@ -22,12 +22,13 @@ int main(int argc, char *argv[]) {
 
 	// Create threads to create points.
 	for(int i = 0; i < NUMBER_OF_THREADS; ++i) {
+		int status = 0;
 		cout << "Creating thread " << i + 1 << endl;
 		thread_points[i].amount_to_generate = points_per_thread[i];
 		thread_points[i].tid = i;
-		errno = pthread_create(&threads[i], NULL, create_points, (void *)&thread_points[i]);
+		status = pthread_create(&threads[i], NULL, create_points, (void *)&thread_points[i]);
 		
-		if(errno != 0) {
+		if(status != 0) {
 			perror("There appears to be an oopsie");
 			cerr << "Thread " << i + 1 << " was not created.\n";
 		}
