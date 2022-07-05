@@ -10,7 +10,7 @@ void *create_points(void *thread_points) {
     mt19937 gen(rd());
     uniform_real_distribution<double> distribution(0,1);
 
-    for(int i = 0; i < ((Points *)thread_points)->amount_to_generate; ++i) {
+    for(unsigned long i = 0; i < ((Points *)thread_points)->amount_to_generate; ++i) {
         double point_x = distribution(gen);
         double point_y = distribution(gen);
         
