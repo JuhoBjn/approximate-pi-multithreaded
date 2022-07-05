@@ -3,6 +3,7 @@ FLAGS = -Wall -g -pthread
 
 approximate_pi: Source.o create_points.o
 	$(CC) $(FLAGS) -o approximate_pi Source.o create_points.o
+	$(RM) *.o
 
 Source.o: Source.cpp
 	$(CC) $(FLAGS) -c Source.cpp
