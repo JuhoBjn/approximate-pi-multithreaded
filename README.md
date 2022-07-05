@@ -14,5 +14,5 @@ To compile without make run `g++ -Wall -g -pthread -o approximate-pi *.cpp`
 
 ## Running the program
 
-To run the program `./approximate-pi 100000`
+To run the program `./approximate-pi 100000`  
 The argument will be the amount of points to generate for the approximation.
