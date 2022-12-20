@@ -12,6 +12,10 @@ using namespace std;
 void spread_load(const unsigned long &points, vector<unsigned long> &points_per_thread);
 
 int main(int argc, char *argv[]) {
+	if(argc < 2) {
+		cout << "Please enter the amount of points to generate.\n";
+		return 22;
+	}
 	unsigned long amount_of_points = strtol(argv[1], NULL, 10);
 	cout << "Generating " << amount_of_points << " points to approximate pi.\n";
 	
